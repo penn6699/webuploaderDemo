@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+    <link href="css/window.css" rel="stylesheet" />
+    <link href="css/pop.css" rel="stylesheet" />
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/pop.js"></script>
+
+</head>
+<body style="margin:0;padding:0;">
+
+    <div class="pop-window pop-window0" style="width:800px!important;top:40%;">
+        <div class="pop-h1">上传文件</div>
+        <div style="margin:0;padding:0;height:500px;width:800px;">
+            <iframe id="iframe" style="margin:0;padding:0;height:500px;width:800px;border:0;" scrolling="no"></iframe>
+        </div>
+        <div class="pop-close pop-close0">×</div>
+    </div>
+    <div class="pop-window-bg"></div>
+
+    <div class="right-btn right-btn0"><input type="button" value="上传文件" onclick="uploadView()" /></div>
+
+    <script type="text/javascript">
+        function uploadView() {
+            if (!$('#iframe').attr('src')) {
+                var src = "断点续传测试.html";
+                $('#iframe').attr('src', src);
+            }
+            $('.right-btn0').opop({
+                popwindow: $('.pop-window.pop-window0'),
+                popbg: $('.pop-window-bg'),
+                popclose: $('.pop-close.pop-close0')
+            });
+        };
+    </script>
+
+</body>
+</html>
